@@ -1,0 +1,14 @@
+.d-flex {
+    display: flex;
+}
+canvas {
+    max-width: 100%;
+}
+.frame-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}

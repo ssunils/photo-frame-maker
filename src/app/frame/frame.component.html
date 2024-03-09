@@ -1,0 +1,42 @@
+<ion-content>
+  <input type="file" (change)="fileChangeEvent($event)" #fileInput style="display: none;" />
+  @if (!idDownloadReady) {
+  <ion-fab vertical="center" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="fileInput.click()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  }
+  <div class="frame-container">
+    <canvas #canvas></canvas>
+  </div>
+  @if (idDownloadReady) {
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="success" (click)="fileInput.click()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="secondary" (click)="downloadImage()" style="margin-top: 10px;">
+      <ion-icon name="download"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  }
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1 / 1"
+          format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded($event)"
+          (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"></image-cropper>
+      </ion-content>
+      <ion-button expand="block" (click)="confirmMerge()">Confirm</ion-button>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>

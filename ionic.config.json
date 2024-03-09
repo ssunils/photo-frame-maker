@@ -1,0 +1,8 @@
+{
+  "name": "QR-Scanner",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "8b2c74f9"
+}
