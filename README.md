@@ -15,4 +15,10 @@ purpose of the app is to merge 2 layers and create one single image.
 npm install && npm start
 ```
 
+## Badge Path
+
+To replace it with  your own badge update the image with the new PNG to set the overlay.
+
+```
 /src/assets/icon/bagde.png
+```
