@@ -23,7 +23,7 @@ export class FrameComponent implements OnInit {
   isModalOpen = false;
   idDownloadReady = false;
 
-  private badge: string = '/assets/icon/bagde.png';
+  private badge: string = '/assets/icon/badge.png';
   private targetWidth: number = 3000;  // Desired width
   private targetHeight: number = 3000; // Desired height
 
